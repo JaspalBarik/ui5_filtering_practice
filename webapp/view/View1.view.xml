@@ -1,0 +1,52 @@
+<mvc:View controllerName="filteringpractice.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="Employee Management">
+
+    <content>
+
+    <VBox class="sapUiResponsiveMargin">
+
+    <List
+    id="employeeList"
+    width="auto" 
+    items="{employee>/Employees}">
+
+      <!-- List Header -->
+      <headerToolbar>
+
+      <Toolbar>
+
+      <Title text="Employee List" />
+
+      <ToolbarSpacer />
+
+      <!-- Search Field -->
+      <SearchField 
+      width="50%" 
+      placeholder="Search Employee Name..."
+      search=".onSearchEmployee" />
+      </Toolbar>
+
+      </headerToolbar>
+
+     <!-- Employee List Items -->
+     <items>
+
+     <ObjectListItem 
+     title="{employee>employeeName}"
+     number="{employee>employeeId}"
+     intro="{employee>designation}"
+     />
+
+     </items>
+
+    </List>
+
+    </VBox>
+
+    </content>
+
+    </Page>
+
+</mvc:View>
